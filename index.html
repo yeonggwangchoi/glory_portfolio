@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>컴퓨터비전 개발자를 꿈꾸는 최영광</title>
+	<title>컴퓨터비전 개발자 최영광</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,6 +22,96 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	<!-- 커스텀 스타일 - 포트폴리오 업데이트 -->
+	<style>
+		/* 탭 스타일 */
+		.nav-pills .nav-link {
+			border-radius: 25px;
+			padding: 10px 25px;
+			margin-right: 10px;
+			font-weight: 500;
+			transition: all 0.3s ease;
+			border: 2px solid #007bff;
+			color: #007bff;
+			background: transparent;
+		}
+
+		.nav-pills .nav-link:hover {
+			background: rgba(0, 123, 255, 0.1);
+		}
+
+		.nav-pills .nav-link.active {
+			background: #007bff;
+			color: #fff;
+			box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+		}
+
+		/* 탭 콘텐츠 애니메이션 */
+		.tab-content > .tab-pane {
+			display: none;
+		}
+
+		.tab-content > .active {
+			display: block;
+		}
+
+		.tab-pane.fade {
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.tab-pane.fade.show {
+			opacity: 1;
+		}
+
+		/* Publications 섹션 스타일 */
+		#page-publications h4.text-primary {
+			font-size: 1.2rem;
+			border-bottom: 2px solid #007bff;
+			padding-bottom: 10px;
+			margin-top: 20px;
+		}
+
+		#page-publications h4.text-primary i {
+			margin-right: 8px;
+		}
+
+		/* 석사 학위 강조 스타일 */
+		.badge-primary {
+			background-color: #007bff;
+			padding: 5px 12px;
+			font-size: 0.75rem;
+			vertical-align: middle;
+		}
+
+		/* 학부 과정 구분선 스타일 */
+		.text-muted i {
+			margin-right: 8px;
+		}
+
+		/* 반응형 탭 */
+		@media (max-width: 576px) {
+			.nav-pills .nav-link {
+				padding: 8px 15px;
+				font-size: 0.9rem;
+				margin-bottom: 10px;
+			}
+
+			.nav-pills {
+				flex-direction: column;
+			}
+
+			.nav-pills .nav-item {
+				width: 100%;
+			}
+
+			.nav-pills .nav-link {
+				text-align: center;
+				margin-right: 0;
+			}
+		}
+	</style>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -40,6 +130,7 @@
 					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 					<li class="nav-item"><a href="#education-section" class="nav-link"><span>Education</span></a></li>
+					<li class="nav-item"><a href="#publications-section" class="nav-link"><span>Publications</span></a></li>
 					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
 					<li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
@@ -87,16 +178,16 @@
 							<h1 class="big">About</h1>
 							<h2 class="mb-4">About Me</h2>
 							<p>안녕하세요. 저는 어떠한 어려움도 극복할 수 있다는 희망을 품고 사는 행복한 사람 Glory입니다.<br />
-								제게 도전은 항상 두려움보다는 설레는 마음이 컸기 때문에 도전을 통해 경험하는 것을 좋아하고, 그 경험을 기반으로 성장하는 것을 즐기는 전자공학과
-								4학년입니다.<br />
-								또한, 꾸준함의 무한한 가치를 알기에 TIL(Today I Learn)을 작성하고, 제가 공부하며 구글 등 포털 사이트로 부터 많은 도움을 받았기에
-								저 또한 지식을 공유하고 혹여 제가 잘못 이해한 부분을 바로 잡고자 블로그와 Github에 공유하며 타인과의 지식 공유해 자신을 개발하기 위해 노력하고
-								있습니다.
+								제게 도전은 항상 두려움보다는 설레는 마음이 컸기 때문에 도전을 통해 경험하는 것을 좋아하고, 그 경험을 기반으로 성장하는 것을 즐기는
+								<strong>성균관대학교</strong> 석사 졸업생입니다.<br />
+								석사 과정에서는 <strong>자율주행, 자율주차, Computer Vision 기반 자동화 시스템</strong>을 중심으로 연구를 수행하였으며, 꾸준함의 무한한 가치를 알기에 TIL(Today I Learn)을 작성하고,
+								제가 공부하며 구글 등 포털 사이트로 부터 많은 도움을 받았기에 저 또한 지식을 공유하고 혹여 제가 잘못 이해한 부분을 바로 잡고자
+								블로그와 Github에 공유하며 타인과의 지식 공유해 자신을 개발하기 위해 노력하고 있습니다.
 							</p>
 							<ul class="about-info mt-4 px-md-0 px-2">
 								<li class="d-flex"><span>Name:</span> <span>최영광</span></li>
-								<li class="d-flex"><span>Address:</span> <span>경기도 안성시</span></li>
-								<li class="d-flex"><span>Email:</span> <span>dudrhkd9911@gmail.com</span></li>
+								<li class="d-flex"><span>Address:</span> <span>경기도 수원시</span></li>
+								<li class="d-flex"><span>Email:</span> <span>dudrhkd7811@g.skku.edu</span></li>
 								<li class="d-flex"><span>Phone: </span> <span>010-9943-7811</span></li>
 							</ul>
 						</div>
@@ -127,6 +218,7 @@
 					<nav id="navi">
 						<ul>
 							<li><a href="#page-1">Education</a></li>
+							<li><a href="#page-publications">Publications</a></li>
 							<li><a href="#page-2">Experience</a></li>
 							<li><a href="#page-3">Award</a></li>
 							<li><a href="#page-4">Skills</a></li>
@@ -137,6 +229,26 @@
 				<div class="col-md-9" id="education-section">
 					<div id="page-1" class="page one">
 						<h2 class="heading">Education</h2>
+
+						<!-- 석사 학위 -->
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>
+							</div>
+							<div class="text pl-3">
+								<span class="date">2024.03-2026.02</span>
+								<h2>전자전기컴퓨터공학과 석사</h2>
+								<span class="position">성균관대학교 (Sungkyunkwan University)</span>
+								<p>
+									<strong>GPA:</strong> 3.92 / 4.5<br />
+									<strong>연구 분야:</strong> 자율주행, 자율주차, Computer Vision 기반 자동화 시스템<br />
+									<strong>연구실:</strong> 자동화연구실 (Automation Lab)<br />
+									<strong>지도교수:</strong> 전재욱 교수님
+								</p>
+							</div>
+						</div>
+
+						<!-- 학부 - 주전공 -->
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
@@ -145,14 +257,11 @@
 								<span class="date">2018-2023</span>
 								<h2>전자공학전공(주 전공)</h2>
 								<span class="position">CheongJu University</span>
-								<p>전자 공학 기초 지식을 통해 응용하는 법을 배우며 올바른 방향으로 성장할 수 있는 개발자가 되었습니다.<br />
-									SNSLAB 연구실과 동아리 활동을 통해, 함께 일하는 법을 배우고 프로젝트와 세미나를 진행해 보며 프로젝트를 통해 직접 문제에 부딪혀보고 해결하며
-									배우는 방식이
-									제게 잘 맞는 공부 방법이라는 것을 깨달았습니다.<br />
-									깨달음을 통해 컴퓨터비전, 딥러닝, 영상처리, 자율주행에 관심이 있어 해당 분야에 대해 공부를 하였습니다.
-								</p>
+								<p><strong>GPA:</strong> 3.74 / 4.5</p>
 							</div>
 						</div>
+
+						<!-- 학부 - 복수전공 -->
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
@@ -161,34 +270,118 @@
 								<span class="date">2021-2023</span>
 								<h2>미래형자동차기술융합전공(복수 전공)</h2>
 								<span class="position">CheongJu University</span>
-								<p>
-									주 전공인 전자 공학을 통해 쌓은 전공 지식을 기반으로 자율 주행과 관련된 자동차 소프트웨어 지식을 배우고 있습니다.<br />
-									미래형 자동차 동아리 COCAREN을 만들어 동아리원들과 함께 자율 주행 프로젝트를 수행하며 지식을 나누고 함께 배우며 성장하여 자율 주행 SW대회에도
-									참가하고 있습니다.
-								</p>
+								<p><strong>GPA:</strong> 3.74 / 4.5</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Publications 섹션 -->
+					<div id="page-publications" class="page" id="publications-section">
+						<h2 class="heading">Publications</h2>
+
+						<!-- 학회 발표 (Conference Papers) -->
+						<div class="mb-4">
+							<h4 class="text-primary mb-3"><i class="icon-mic"></i> Conference Papers</h4>
+
+							<div class="resume-wrap d-flex ftco-animate">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="flaticon-ideas"></span>
+								</div>
+								<div class="text pl-3">
+									<span class="date">2025</span>
+									<h2>VISTA: Visual Infrastructure Supporting Technology in Autonomy through Precise, Keypoint-based AVP Localization</h2>
+									<span class="position">IEEE/IEIE International Conference on Consumer Electronics-Asia (ICCE-Asia)</span>
+									<p>
+										<strong>Authors:</strong> <b>Yeong Gwang Choi</b>, Hye Hyeon Park, Eun Ho Kim, Hye Jun Hong, Jae Wook Jeon<br />
+										<strong>DOI:</strong> <a href="https://doi.org/10.1109/ICCE-Asia67487.2025.11263586" target="_blank">10.1109/ICCE-Asia67487.2025.11263586</a>
+									</p>
+								</div>
+							</div>
+
+							<div class="resume-wrap d-flex ftco-animate">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="flaticon-ideas"></span>
+								</div>
+								<div class="text pl-3">
+									<span class="date">2025</span>
+									<h2>Infrastructure Sensor-Based Modular Autonomous Valet Parking System Using ROS 2</h2>
+									<span class="position">International Technical Conference on Circuits/Systems, Computers, and Communications (ITC-CSCC)</span>
+									<p>
+										<strong>Authors:</strong> <b>Yeong Gwang Choi</b>, Young Hoon Suh, Eun Ho Kim, Hye Hyeon Park, Hyo Jin Park, Jae Wook Jeon<br />
+										<strong>DOI:</strong> <a href="https://doi.org/10.1109/ITC-CSCC66376.2025.11137602" target="_blank">10.1109/ITC-CSCC66376.2025.11137602</a>
+									</p>
+								</div>
+							</div>
+
+							<div class="resume-wrap d-flex ftco-animate">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="flaticon-ideas"></span>
+								</div>
+								<div class="text pl-3">
+									<span class="date">2025</span>
+									<h2>Autonomous Driving Vehicle Control Using YOLO11-Based Pose Estimation with Infrastructure Sensors</h2>
+									<span class="position">11th International Conference on Mechatronics and Robotics Engineering (ICMRE)</span>
+									<p>
+										<strong>Authors:</strong> <b>Yeong Gwang Choi</b>, Eun Ho Kim, Young Hoon Suh, Jae Wook Jeon<br />
+										<strong>DOI:</strong> <a href="https://doi.org/10.1109/ICMRE64970.2025.10976313" target="_blank">10.1109/ICMRE64970.2025.10976313</a>
+									</p>
+								</div>
+							</div>
+
+							<div class="resume-wrap d-flex ftco-animate">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="flaticon-ideas"></span>
+								</div>
+								<div class="text pl-3">
+									<span class="date">2024</span>
+									<h2>Analysis of ROS2-Based Automotive Architecture Using Containers for SDV</h2>
+									<span class="position">IEEE 33rd International Symposium on Industrial Electronics (ISIE)</span>
+									<p>
+										<strong>Authors:</strong> <b>Yeong Gwang Choi</b>, Si Woo Lee, Jae Wook Jeon<br />
+										<strong>DOI:</strong> <a href="https://doi.org/10.1109/ISIE54533.2024.10595806" target="_blank">10.1109/ISIE54533.2024.10595806</a>
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div id="page-2" class="page two">
 						<h2 class="heading">Work Experience</h2>
+
+						<!-- 석사 경력 -->
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
 							<div class="text pl-3">
-								<span class="date">2021.11-2023.~(진행중)</span>
+								<span class="date">2024.03-2026.02</span>
+								<h2>Graduate Research Student</h2>
+								<span class="position">자동화연구실 (Automation Lab)</span>
+								<p></p>
+								<b class="text-primary">주요 업무</b>
+								<div>
+									<div> - 자율주행, 자율주차, Computer Vision 기반 자동화 시스템, 인프라 센서 기반 차량 제어 연구</div>
+									<div> - (주) 현대자동차 H-mobility 교육</div>
+									<div> - (주) 현대엔지비 교육</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 학부 경력 -->
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>
+							</div>
+							<div class="text pl-3">
+								<span class="date">2021.11-2023</span>
 								<h2>Undergraduate Research Student</h2>
-								<span class="position">SNSLAB</span>
-								<p>청주대학교 전자공학과 SNSLAB 연구실 학부 연구생<br /></p>
-								<b class="text-primary">기술 스택</b>
-								<p>C++, C, Python, OpenCV, PyTorch, Java, MFC, ROS</p>
-								<b class="text-primary">주요 업무 </b>
+								<span class="position">신호및시스템연구실 (SNSLAB)</span>
+								<p></p>
+								<b class="text-primary">주요 업무</b>
 								<div>
 									<div> - C/C++ 수업 조교</div>
 									<div> - 임베디드 C 교육 조교</div>
 								</div>
-								</p>
 							</div>
 						</div>
 						<div class="resume-wrap d-flex ftco-animate">
@@ -199,9 +392,8 @@
 								<span class="date">2023(1개월)</span>
 								<h2>학부 현장 실습생</h2>
 								<span class="position">(주)원클릭에이아이</span>
-								<p>미래형자동차 기술융합 현장 실습<br /></p>
-								<b class="text-primary">기술 스택</b>
-								<p>Python, ROS</p>
+								<p></p>
+								<b class="text-primary">주요 업무</b>
 								<div>
 									<div> - 자율 주행 소프트웨어 개발</div>
 								</div>
@@ -215,9 +407,8 @@
 								<span class="date">2022(1개월)</span>
 								<h2>학부 현장 실습생</h2>
 								<span class="position">(주)자이트론</span>
-								<p>미래형자동차 기술융합 현장 실습<br /></p>
-								<b class="text-primary">기술 스택</b>
-								<p>Python, ROS</p>
+								<p></p>
+								<b class="text-primary">주요 업무</b>
 								<div>
 									<div> - 자율 주행 소프트웨어 개발</div>
 								</div>
@@ -237,7 +428,7 @@
 								<p>경성 대학교에서 열린 2회 미래형자동차 자율주행 소프트웨어(SW) 경진대회 동상(한국산업기술진흥원장상) 수상</p>
 							</div>
 						</div>
-						
+
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
@@ -319,7 +510,7 @@
 								<p>2023 우수창업아이템경진대회에서 스마트 미러를 주제로 우수상 수상</p>
 							</div>
 						</div>
-						
+
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
@@ -510,15 +701,53 @@
 					
 					<div id="page-5" class="page five">
 						<h2 id="projects-section" class="heading">Projects</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.06-2023.08</span>
-								<div class="d-flex">
-									<h2>ROS 기반 유아용 전동차 자율주행 시스템</h2>
+
+						<!-- 탭 네비게이션 -->
+						<ul class="nav nav-pills mb-4" id="projects-tab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" id="grad-proj-tab" data-toggle="pill" href="#grad-projects" role="tab">석사 과정</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="undergrad-proj-tab" data-toggle="pill" href="#undergrad-projects" role="tab">학부 과정</a>
+							</li>
+						</ul>
+
+						<!-- 탭 콘텐츠 -->
+						<div class="tab-content" id="projects-tabContent">
+							<!-- 석사 과정 프로젝트 -->
+							<div class="tab-pane fade show active" id="grad-projects" role="tabpanel">
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">[20XX.XX-20XX.XX]</span>
+										<div class="d-flex">
+											<h2>[프로젝트 제목을 입력하세요]</h2>
+										</div>
+										<span class="position">[역할]</span>
+										<div> <b class="text-dark">기술 스택 : </b>[사용 기술]</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - [기능 설명 1]</div>
+											<div> - [기능 설명 2]</div>
+										</div>
+									</div>
 								</div>
+
+								<!-- 석사 프로젝트 추가 시 위 형식 복사하여 사용 -->
+							</div>
+
+							<!-- 학부 과정 프로젝트 -->
+							<div class="tab-pane fade" id="undergrad-projects" role="tabpanel">
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.06-2023.08</span>
+										<div class="d-flex">
+											<h2>ROS 기반 유아용 전동차 자율주행 시스템</h2>
+										</div>
 								<span class="position">팀장</span>
 								<div> <b class="text-dark">기술 스택 : </b>Python, C++, Pytorch, Ultralytics(yolov8), OpenCV, ROS, Linux
 								</div>
@@ -532,27 +761,26 @@
 											1, 2차선을 구분하여 초음파 센서로부터 장애물 검출 신호를 받으면 차선 변경 회피 기동</div>
 										<div> - 신호등 검출은 yolov8n 모델로 신호등 영역을 검출하여 검출된 영역의 크기가 일정 크기 이상일 때 현재 주행중인 차량에 영향을 주는 신호등이라고 판단하여
 											 해당 영역을 crop하고 색 분류를 수행하는 Classification 모델에서 해당 영역의 신호등이 어떤 색의 신호인지 구분한 후 정지</div>
+									</div>
 								</div>
 							</div>
-						</div>
-						
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.07-현재~</span>
-								<div class="d-flex">
-									<h2>Side Project - Portfolio 사이트</h2>
-								</div>
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - Github 포트폴리오 데모를 이용하여 나만의 포트폴리오 사이트 구축</div>
-								</div>
-							</div>
-						</div>
 
-						<div class="resume-wrap d-flex ftco-animate">
+							<div class="resume-wrap d-flex ftco-animate">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="flaticon-ideas"></span>
+								</div>
+								<div class="text pl-3">
+									<span class="date">2023.07-현재~</span>
+									<div class="d-flex">
+										<h2>Side Project - Portfolio 사이트</h2>
+									</div>
+									<div> <b class="text-dark">주요 기능 : </b>
+										<div> - Github 포트폴리오 데모를 이용하여 나만의 포트폴리오 사이트 구축</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
@@ -938,6 +1166,8 @@
 								</div>
 							</div>
 						</div>
+							</div><!-- 학부 과정 프로젝트 탭 끝 -->
+						</div><!-- 탭 콘텐츠 끝 -->
 
 					</div>
 				</div>
@@ -1018,9 +1248,9 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>함께할 <span>연구실을 찾는 중</span> 입니다.</h2>
-					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-					<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">연락주세요.</a></p>
+					<h2>함께 <span>성장할 기회</span>를 찾고 있습니다.</h2>
+					<p>컴퓨터비전과 딥러닝 분야에서 쌓아온 경험을 바탕으로 새로운 도전을 준비하고 있습니다.</p>
+					<!-- <p class="mb-0"><a href="#contact-section" class="btn btn-primary py-3 px-5">연락주세요.</a></p> -->
 				</div>
 			</div>
 		</div>
@@ -1032,7 +1262,7 @@
 				<div class="col-md-7 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Contact</h1>
 					<h2 class="mb-4">Contact Me</h2>
-					<p>연구실과 함께 성장하는 개발자가 되겠습니다. 연락주세요.</p>
+					<p>새로운 도전과 함께 성장하는 개발자가 되겠습니다.</p>
 				</div>
 			</div>
 
@@ -1044,7 +1274,7 @@
 						</div>
 						<div>
 							<h3 class="mb-4">Address</h3>
-							<p>경기도 안성시</p>
+							<p>경기도 수원시</p>
 						</div>
 					</div>
 				</div>
@@ -1066,7 +1296,7 @@
 						</div>
 						<div>
 							<h3 class="mb-4">Email Address</h3>
-							<p><a href="mailto:info@yoursite.com">dudrhkd9911@gmail.com</a></p>
+							<p><a href="mailto:dudrhkd7811@g.skku.edu">dudrhkd7811@g.skku.edu</a></p>
 						</div>
 					</div>
 				</div>
