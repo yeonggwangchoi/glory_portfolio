@@ -111,6 +111,77 @@
 				margin-right: 0;
 			}
 		}
+
+		/* 더보기 버튼 스타일 */
+		.btn-more-projects {
+			border-radius: 25px;
+			padding: 10px 30px;
+			font-weight: 500;
+			transition: all 0.3s ease;
+		}
+
+		.btn-more-projects:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+		}
+
+		.btn-more-projects i {
+			margin-left: 8px;
+			transition: transform 0.3s ease;
+		}
+
+		.btn-more-projects[aria-expanded="true"] i {
+			transform: rotate(180deg);
+		}
+
+		/* collapse 영역 스타일 */
+		#more-undergrad-projects {
+			margin-top: 20px;
+		}
+
+		/* About 이미지 크기 조절 */
+		.img-about .img {
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+
+		/* Contact 섹션 텍스트 오버플로우 수정 */
+		.contact-info .box p,
+		.contact-info .box a {
+			word-break: break-all;
+			overflow-wrap: break-word;
+			font-size: 0.85rem;
+		}
+
+		/* About 개인정보 - 사진 하단 스타일 */
+		.about-info-wrap {
+			background: rgba(0, 123, 255, 0.05);
+			border-left: 3px solid #007bff;
+			position: relative;
+			z-index: 10;
+		}
+
+		.about-info-wrap .about-info li {
+			margin-bottom: 8px;
+		}
+
+		.about-info-wrap .about-info li span:first-child {
+			min-width: 80px;
+			font-weight: 600;
+			color: #007bff;
+		}
+
+		/* About 섹션 레이아웃 수정 */
+		#about-section .col-md-6.d-flex.flex-column {
+			padding-top: 5rem;
+		}
+
+		#about-section .col-md-6.d-flex.flex-column .img-about {
+			flex: 0 0 auto;
+			height: 450px;
+			margin-bottom: 1.5rem;
+		}
 	</style>
 </head>
 
@@ -147,7 +218,7 @@
 						<span class="subheading">Hey! I am</span>
 						<h1>최영광</h1>
 						<h2>I'm a
-							<span class="txt-rotate" data-period="500" data-rotate='[  "컴퓨터비전 개발자", "영상처리 개발자"]'></span>
+							<span class="txt-rotate" data-period="500" data-rotate='["Future Mobility Researcher", "Vision AI Researcher"]'></span>
 						</h2>
 					</div>
 				</div>
@@ -164,12 +235,21 @@
 	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
 		<div class="container">
 			<div class="row d-flex no-gutters">
-				<div class="col-md-6 col-lg-6 d-flex">
+				<div class="col-md-6 col-lg-6 d-flex flex-column">
 					<div class="img-about img d-flex align-items-stretch">
 						<div class="overlay"></div>
 						<div class="img d-flex align-self-stretch align-items-center"
-							style="background-image:url(images/about.jpg);">
+							style="background-image:url(images/about.jpg?v=2);">
 						</div>
+					</div>
+					<!-- 개인 정보 - 사진 하단 -->
+					<div class="about-info-wrap ftco-animate py-4 px-3">
+						<ul class="about-info mt-0 px-md-0 px-2">
+							<li class="d-flex"><span>Name:</span> <span>최영광</span></li>
+							<li class="d-flex"><span>Address:</span> <span>경기도 수원시</span></li>
+							<li class="d-flex"><span>Email:</span> <span>dudrhkd7811@g.skku.edu</span></li>
+							<li class="d-flex"><span>Phone: </span> <span>010-9943-7811</span></li>
+						</ul>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-6 pl-md-5 py-5">
@@ -177,22 +257,15 @@
 						<div class="col-md-12 heading-section ftco-animate">
 							<h1 class="big">About</h1>
 							<h2 class="mb-4">About Me</h2>
-							<p>안녕하세요. 저는 어떠한 어려움도 극복할 수 있다는 희망을 품고 사는 행복한 사람 Glory입니다.<br />
-								제게 도전은 항상 두려움보다는 설레는 마음이 컸기 때문에 도전을 통해 경험하는 것을 좋아하고, 그 경험을 기반으로 성장하는 것을 즐기는
-								<strong>성균관대학교</strong> 석사 졸업생입니다.<br />
-								석사 과정에서는 <strong>자율주행, 자율주차, Computer Vision 기반 자동화 시스템</strong>을 중심으로 연구를 수행하였으며, 꾸준함의 무한한 가치를 알기에 TIL(Today I Learn)을 작성하고,
-								제가 공부하며 구글 등 포털 사이트로 부터 많은 도움을 받았기에 저 또한 지식을 공유하고 혹여 제가 잘못 이해한 부분을 바로 잡고자
-								블로그와 Github에 공유하며 타인과의 지식 공유해 자신을 개발하기 위해 노력하고 있습니다.
+							<p style="color: #111; line-height: 1.8;">안녕하세요. AI를 활용해 자율주행의 한계를 극복하고자 하는 지원자 최영광입니다.<br /><br />
+								현재 성균관대학교 자동화연구실에서 석사 과정 중이며, 자율주행·자율주차·Computer Vision 기반 자동화 시스템을 중심으로 연구하고 있습니다.<br /><br />
+								자율주행은 다양한 기술이 융합되는 분야인 만큼, 연구 성과를 실제 시스템으로 구현할 수 있는 엔지니어의 역할이 중요하다고 생각합니다. 제게 도전은 항상 두려움보다는 설레는 마음이 컸기 때문에 도전을 통해 경험하는 것을 좋아하고, 그 경험을 기반으로 성장하는 것을 즐깁니다. 이러한 마음가짐으로 석사 과정 동안 국제 학회 논문 5편을 발표하며 학술적 전문성을 체계적으로 쌓아 왔고, 학부 시절에는 자율주행 관련 경진대회 수상 경험을 통해 실전 중심의 개발 역량을 축적해 왔습니다.<br /><br />
+								특히 저는 빠르게 변화하는 기술 흐름을 정확히 포착하고, 새로운 기술을 신속히 학습해 실제 문제 해결에 적용하는 데 강점을 가지고 있습니다. 이를 바탕으로 연구와 개발 간의 간극을 줄이고, 현장에서 바로 활용 가능한 솔루션을 구현해 왔습니다.<br /><br />
+								앞으로도 이러한 연구 전문성과 개발 역량을 바탕으로, 미래 모빌리티 기술을 현실로 구현하는 엔지니어로 성장해 나가고자 합니다.
 							</p>
-							<ul class="about-info mt-4 px-md-0 px-2">
-								<li class="d-flex"><span>Name:</span> <span>최영광</span></li>
-								<li class="d-flex"><span>Address:</span> <span>경기도 수원시</span></li>
-								<li class="d-flex"><span>Email:</span> <span>dudrhkd7811@g.skku.edu</span></li>
-								<li class="d-flex"><span>Phone: </span> <span>010-9943-7811</span></li>
-							</ul>
 						</div>
 					</div>
-					<div class="counter-wrap ftco-animate d-flex mt-md-3">
+					<!-- <div class="counter-wrap ftco-animate d-flex mt-md-3">
 						<div class="text">
 							<p class="mb-4">
 								<span class="number" data-number="21">0</span>
@@ -205,7 +278,7 @@
 								href="https://drive.google.com/file/d/1ffbx1qkpleg7nthrQBvnuX_aA3ZClIAl/view?usp=sharing"
 								class="btn btn-primary py-3 px-3">자기소개서 다운받기</a></p>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -721,15 +794,24 @@
 										<span class="flaticon-ideas"></span>
 									</div>
 									<div class="text pl-3">
-										<span class="date">[20XX.XX-20XX.XX]</span>
+										<span class="date">2024.03-2026.02</span>
 										<div class="d-flex">
-											<h2>[프로젝트 제목을 입력하세요]</h2>
+											<h2>Autoware 기반 1/5 스케일 자율주행 플랫폼 연구 및 개발</h2>
 										</div>
-										<span class="position">[역할]</span>
-										<div> <b class="text-dark">기술 스택 : </b>[사용 기술]</div>
+										<span class="position">연구원</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>OS:</b> Linux (Ubuntu 22.04)</div>
+											<div> - <b>Languages:</b> C++, Python</div>
+											<div> - <b>Frameworks:</b> ROS 2 (Humble), Autoware (Universe/Core)</div>
+											<div> - <b>Hardware:</b> Hesai OT128, Ouster OS0-32 (LiDAR), VectorNav VN-200 (GNSS/INS), x86 PC, 1/5 Scale EV Platform</div>
+										</div>
 										<div> <b class="text-dark">주요 기능 : </b>
-											<div> - [기능 설명 1]</div>
-											<div> - [기능 설명 2]</div>
+											<div> - 고정밀 PCD 맵 구축: lidarslam_ros2를 활용하여 성균관대학교 캠퍼스 내의 Point Cloud Data 생성 및 최적화</div>
+											<div> - HD Map(Vector Map) 설계: Vector Map Builder를 이용하여 자율주행에 필요한 차선 정보, 정지선, 주행 경로 등 고정밀 벡터 맵 구축</div>
+											<div> - Localization: Ouster OS0-32의 NDT 매칭과 VectorNav VN-200의 GNSS/INS 데이터를 결합하여, 도심 및 캠퍼스 환경에서 실시간 Localization 시스템 통합 및 검증</div>
+											<div> - Autoware Stack 포팅 및 주행 제어: Autoware의 Planning/Control 모듈을 1/5 스케일 플랫폼의 제어 동특성에 맞춰 포팅 및 파라미터 최적화를 통해 안정적인 경로 추종 구현</div>
+											<div> - 센서 드라이버 및 인터페이스 최적화: OS0-32와 VN-200 센서 데이터의 타임 동기화 및 ROS 2 토픽 기반의 실시간 데이터 파이프라인 구축</div>
 										</div>
 									</div>
 								</div>
@@ -739,6 +821,10 @@
 
 							<!-- 학부 과정 프로젝트 -->
 							<div class="tab-pane fade" id="undergrad-projects" role="tabpanel">
+
+								<!-- 대표 프로젝트 4개 (날짜순 - 최신 먼저) -->
+
+								<!-- 1. ROS 기반 유아용 전동차 자율주행 시스템 (2023.06-2023.08) -->
 								<div class="resume-wrap d-flex ftco-animate">
 									<div class="icon d-flex align-items-center justify-content-center">
 										<span class="flaticon-ideas"></span>
@@ -748,424 +834,500 @@
 										<div class="d-flex">
 											<h2>ROS 기반 유아용 전동차 자율주행 시스템</h2>
 										</div>
-								<span class="position">팀장</span>
-								<div> <b class="text-dark">기술 스택 : </b>Python, C++, Pytorch, Ultralytics(yolov8), OpenCV, ROS, Linux
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 유아용 전동차 프로세스를 제거하고 Arduino Mega 프로세서로 교체</div>
-										<div> - 허프 변환(Hough Transformation)을 통해 직선을 검출하고 검출된 차선 중 왼쪽 차선으로 판단되는 직선들과 오른쪽 차선으로 
-											판단되는 직선들을 구분하고 구분된 직선으로 외쪽 대표 직선과 오른쪽 대표 직선을 검출한 후 검출된 대표 직선을 기준으로 차량의 조향을 정함</div>
-										<div> - 가변 저항을 사용하여 차량의 조향 위치를 ADC 값으로 확인하고 각 ADC 값에
-											따라 조향 제어</div>
-										<div> - yolov8로 학습한 Segmentation 모델을 사용하여 총 2개의 차선중 중앙 차선을 검출하였고 해당 중앙 차선을 기준으로 
-											1, 2차선을 구분하여 초음파 센서로부터 장애물 검출 신호를 받으면 차선 변경 회피 기동</div>
-										<div> - 신호등 검출은 yolov8n 모델로 신호등 영역을 검출하여 검출된 영역의 크기가 일정 크기 이상일 때 현재 주행중인 차량에 영향을 주는 신호등이라고 판단하여
-											 해당 영역을 crop하고 색 분류를 수행하는 Classification 모델에서 해당 영역의 신호등이 어떤 색의 신호인지 구분한 후 정지</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="resume-wrap d-flex ftco-animate">
-								<div class="icon d-flex align-items-center justify-content-center">
-									<span class="flaticon-ideas"></span>
-								</div>
-								<div class="text pl-3">
-									<span class="date">2023.07-현재~</span>
-									<div class="d-flex">
-										<h2>Side Project - Portfolio 사이트</h2>
-									</div>
-									<div> <b class="text-dark">주요 기능 : </b>
-										<div> - Github 포트폴리오 데모를 이용하여 나만의 포트폴리오 사이트 구축</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.06-2023.06</span>
-								<div class="d-flex">
-									<h2>OpenCV를 활용한 C++기반 차선 검출</h2>
-								</div>
-								<span class="position">S/W개발</span>
-								<div> <b class="text-dark">기술 스택 : </b>C++, OpenCV, ROS, Linux
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - OpenCV와 C++를 사용하여 허프 변환(Hough Transformation)을 통해 직선 검출</div>
-										<div> - 검출된 직선 중 왼쪽에 위치하는 직선과 오른
-											쪽에 위치하는 직선으로 구분</div>
-										<div> - 구분된 직선들의 왼쪽 대표 직선과 오른쪽 대표 직선 검출</div>
-										<div> - 대표 직선들과 수직인 선을 기준으로 카메라 중앙 값과 두 직선과 수직선 교점의 중앙 값을 비교하여 조향 값을 정함</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.05-2023.06</span>
-								<div class="d-flex">
-									<h2>AA 1/10 자율 주행</h2>
-								</div>
-								<span class="position">팀장</span>
-								<div> <b class="text-dark">기술 스택 : </b>C, C++, OpenCV, ROS
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - ROS를 미들웨어로 Jetson Nano와 Arduino를 C/C++로 I2C 제어</div>
-										<div> - 카메라로 인식된 차선을 따라가는 라인트레이서</div>
-										<div> - 중간에 장애물을 초음파 센서로 인식 및 정지</div>
-								</div>
-							</div>
-						</div>
-
-						
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.05-2023.05</span>
-								<div class="d-flex">
-									<h2>Linux 환경에서 C를 활용한 게임 프로그램</h2>
-								</div>
-								<span class="position">S/W개발</span>
-								<div> <b class="text-dark">기술 스택 : </b>C, Linux(Ubuntu)
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 리눅스 OS 환경에서 응용 프로그램을 구현 </div>
-										<div> - 게임의 목록이 출력되며 게임 선택 </div>
-										<div> - 선택된 게임에 따라 fork와 execute를 하여 각 프로세스를 유동적으로 제어</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.05-2023.05</span>
-								<div class="d-flex">
-									<h2>U-Net을 활용한 CT 이미지 Segmentation</h2>
-								</div>
-								<span class="position">팀장</span>
-								<div> <b class="text-dark">기술 스택 : </b>Python, Pytorch
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - U-Net을 재 구현</div>
-										<div> - 구현된 모델을 통해 심장 기도 등의 CT 이미지를 Segmentation</div>
-								</div>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.04-2023.04</span>
-								<div class="d-flex">
-									<h2>VGG Net을 활용한 정상, 폐렴, 코로나 환자 폐 X-ray 사진 분류</h2>
-								</div>
-								<span class="position">S/W개발</span>
-								<div> <b class="text-dark">기술 스택 : </b>Python, Pytorch
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 정상, 폐렴, 코로나 환자 폐 X-ray 사진을 학습 시켜 분류 성능 비교</div>
-										<div> - 데이터를 10000장 씩 증강하며 분류 성능 비교</div>
-								</div>
-							</div>
-						</div>
-					
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.03-2023.03</span>
-								<div class="d-flex">
-									<h2>ROS기반 심화 자율주행</h2>
-								</div>
-								<div> <b class="text-dark">기술 스택 : </b>Python, ROS, OpenCV, Tensorflow
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 초음파 센서를 이용하여 미로 주행(장애물 인식)</div>
-										<div> - 영상처리를 이용하여 모형 신호등 인식</div>
-										<div> - 영상처리를 이용하여 차선 인식 자율주행</div>
-										<div> - AR 인식을 이용하여 AR 주행</div>
-										<div> - AR을 이용한 객체 인식 주차</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.02-2023.05</span>
-								<div class="d-flex">
-									<h2>얼굴 움직임 감지 및 주변 환경 변화 감지 알고리즘을 이용한 스마트 휠체어</h2>
-									<div>&nbsp;<a class="btn btn-outline-secondary" target="_blank"
-											class="btn btn-outline-secondary"
-											href="https://github.com/yeonggwangchoi/Face_Control_Wheelchair">Github</a>
-									</div>
-								</div>
-								<span class="position">S/W 및 H/W개발</span>
-								<div> <b class="text-dark">기술 스택 : </b>Python, C, OpenCV, Dlib, Java,
-									ultralytics(yolov8)
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 얼굴의 특징점을 검출하고 특징점을 이용하여 얼굴의 방향을 예측하여 해당 방향으로 조향 제어</div>
-										<div> - Object Detection에서 예측한 Bounding Box가 예상 이동 방향의 픽셀과 겹치는 픽셀이 있는지
-											 확인하여 이동 방향에 객체가 존재하면 방향 전환만 가능</div>
-										<div> - 객체 인식 모델이 예측한 영상이 신호등 클래스이면
-											신호 인식 모델을 통과하고 인식된 신호에 따른 제어</div>
-										<div> - 보호자가 휠체어를 제어할 수 있도록 안드로이드 어플리케이션 제작</div>
-								</div>
-							</div>
-						</div>
-						
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.12-2023.02</span>
-								<div class="d-flex">
-									<h2>유아용 전동차 자율주행</h2>
-								</div>
-								<span class="position">팀장</span>
-								<div> <b class="text-dark">기술 스택 : </b>Python, OpenCV, C/C++
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 유아용 전동차 프로세스를 제거하고 Arduino Mega 프로세서로 교체</div>
-										<div> - PC (CPU: intel i7 12세대 / GPU: RTX 3060 / RAM: 16GB)와 Arduino프로세서와의 시리얼
-											통신</div>
-										<div> - 가변 저항을 사용하여 차량의 조향 위치를 ADC 값으로 확인하고 각 ADC 값에
-											따라 조향 제어</div>
-										<div> - OpenCV를 이용한 차선 인식 및 인식된 차선 자율 주행</div>
-										<div> - LiDAR센서와 초음파 센서를 이용한 장애물 감지 및 회피 기동</div>
-										<div> - Yolov5로 학습된 신호 인식 모델이 예측한 신호에 따른 제어</div>
-										<div> - LiDAR센서와 초음파 센서를 이용하여 주차된 차량 및 장애물을 인식하고 빈 주차 공간에 주차</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2023.11-2023.01</span>
-								<div class="d-flex">
-									<h2>CNN 기반 얼굴 특징점 검출 및 신호등 색상 분류</h2>
-								</div>
-								<span class="position">S/W개발</span>
-								<div> <b class="text-dark">기술 스택 : </b>Python, Pytorch, Dlib
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 얼굴의 특징점을 CNN을 통해 검출</div>
-										<div> - 적은 파라미터를 갖는 CNN 모델 구축</div>
-										<div> - 신호등 이미지를 학습 시켜 색 분류 성능 비교</div>
-								</div>
-							</div>
-						</div>
-
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.12-2022.12</span>
-								<div class="d-flex">
-									<h2>MFC를 활용한 열쇠 렌탈 시스템</h2>
-								</div>
-								<div> <b class="text-dark">기술 스택 : </b>C, C++, MFC
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 열쇠 대여, 반납, 조회 기능 GUI 구현</div>
-										<div> - 열쇠 대여, 반납시 신상정보를 기입</div>
-										<div> - 렌탈 내역을 기록하고 관리</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.12-2022.12</span>
-								<div class="d-flex">
-									<h2>OpenCV를 이용한 안구 혈관 검출</h2>
-								</div>
-								<div> <b class="text-dark">기술 스택 : </b>Python, OpenCV
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - GrayScale등을 통한 안구 이미지 전처리</div>
-										<div> - 전처리된 이미지에 필터를 활용한 잡음 제거</div>
-										<div> - 잡음이 제거 된 이미지에서 혈관 부분 검출</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.11-2022.11</span>
-								<div class="d-flex">
-									<h2>Yolov5를 활용한 주차공간 인식 시스템</h2>
-								</div>
-								<div> <b class="text-dark">기술 스택 : </b>Python, Yolov5
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - Yolov5를 이용하여 주차 공간을 학습</div>
-										<div> - 학습된 주차 공간 모델을 통해 주차 공간을 인식</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.10-2022.10</span>
-								<div class="d-flex">
-									<h2>OpenCV를 이용한 차량 번호판 영역 검출</h2>
-								</div>
-								<div> <b class="text-dark">기술 스택 : </b>Python, OpenCV
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - GrayScale등을 통한 차량 이미지 전처리</div>
-										<div> - 전처리된 이미지에 필터를 활용한 잡음 제거</div>
-										<div> - 잡음이 제거 된 이미지에서 차량 번호판의 색상 등의 특징을 이용하여 번호판 검출</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.09-2022.09</span>
-								<div class="d-flex">
-									<h2>ATmega128(MCU)을 활용한 축소형 AED</h2>
-								</div>
-								<div> <b class="text-dark">기술 스택 : </b>C
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - AED기 충전 중에 타이머 카운터를 활용하여 정확한 심폐 소생술을 위한 시간과 지침을 LCD를 통해 표시</div>
-										<div> - 충전이 완료되면 사용자의 감전 사고를 예방하기 위하여 AED와 일정 거리 유지하게 하는 기능 구현</div>
-										<div> - 전기 충격이 완료 되면 다시 심폐 소생술을 지시</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.09-2023.09</span>
-								<div class="d-flex">
-									<h2>ROS기반 자율주행</h2>
-								</div>
-								<div> <b class="text-dark">기술 스택 : </b>Python, ROS, OpenCV
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 초음파 센서를 이용하여 미로 주행(장애물 인식)</div>
-										<div> - 영상처리를 이용하여 차선 인식 자율주행</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.08-2023.08</span>
-								<div class="d-flex">
-									<h2>모형 전기차 제작</h2>
-								</div>
-								<div> <b class="text-dark">기술 스택 : </b>C, C++, Java
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 전기차 조종기와 모터와 회로 구성을 제외한 부품을 3D 프린터를 통한 제작</div>
-										<div>
-											- 송신부는 2개 가변저항의 변화하는 ADC 값을 데이터로 넘겨주어 수신부에서 받은 ADC값 2개로 조향, 구
-											동처리를 하는 방식
+										<span class="position">팀장</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>OS:</b> Linux</div>
+											<div> - <b>Languages:</b> Python, C++</div>
+											<div> - <b>Frameworks:</b> ROS</div>
+											<div> - <b>Libraries:</b> PyTorch, Ultralytics (YOLOv8), OpenCV</div>
+											<div> - <b>Hardware:</b> Arduino Mega</div>
 										</div>
-										<div>
-											- DC-DC 컨버터를 이용하여 9V 배터리를 5V로 변환하여 송신부 아두이노에 전원공급하고 3.7V, 3.5A배터리를 5V 변환하여
-											수신부 아두이노에 전원공급
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - Arduino Mega 기반 차량 제어 시스템 구축</div>
+											<div> - Hough Transform 기반 차선 검출 및 조향 제어</div>
+											<div> - ADC를 활용한 조향 위치 피드백 제어</div>
+											<div> - YOLOv8 Segmentation 기반 차선 변경 및 장애물 회피</div>
+											<div> - YOLOv8n + Classification 모델 기반 신호등 인식</div>
 										</div>
+									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.07-2023.07</span>
-								<div class="d-flex">
-									<h2>ATmega128(MCU)을 활용한 화장실 전등 유지 시스템</h2>
+								<!-- 2. AA 1/10 자율 주행 (2023.05-2023.06) -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.05-2023.06</span>
+										<div class="d-flex">
+											<h2>AA 1/10 자율 주행</h2>
+										</div>
+										<span class="position">팀장</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> C, C++</div>
+											<div> - <b>Frameworks:</b> ROS</div>
+											<div> - <b>Libraries:</b> OpenCV</div>
+											<div> - <b>Hardware:</b> Jetson Nano, Arduino</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - ROS 기반 Jetson Nano-Arduino I2C 통신 시스템</div>
+											<div> - OpenCV 기반 차선 인식 및 추종 주행</div>
+											<div> - 초음파 센서 기반 장애물 감지 및 정지</div>
+										</div>
+									</div>
 								</div>
-								<div> <b class="text-dark">기술 스택 : </b>C
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 화장실을 장시간 이용하는 사람들을 위해 스위치 혹은 압력 센서를 이용한 전등 유지 시스템</div>
-								</div>
-							</div>
-						</div>
 
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.06-2023.06</span>
-								<div class="d-flex">
-									<h2>ATmega128(MCU)을 활용한 영단어 학습 도구</h2>
+								<!-- 3. ROS기반 심화 자율주행 (2023.03-2023.03) -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.03-2023.03</span>
+										<div class="d-flex">
+											<h2>ROS기반 심화 자율주행</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python</div>
+											<div> - <b>Frameworks:</b> ROS, TensorFlow</div>
+											<div> - <b>Libraries:</b> OpenCV</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - 초음파 센서 기반 미로 주행 및 장애물 회피</div>
+											<div> - OpenCV 기반 신호등 인식 및 차선 추종 주행</div>
+											<div> - AR 마커 인식 기반 자율주행 및 주차</div>
+										</div>
+									</div>
 								</div>
-								<div> <b class="text-dark">기술 스택 : </b>C
-								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - LCD와 스위치를 이용한 간단한 영단어 학습 도구</div>
-								</div>
-							</div>
-						</div>
 
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022.03-2023.05</span>
-								<div class="d-flex">
-									<h2>라인트레이서 및 RC_Car</h2>
+								<!-- 4. 얼굴 움직임 감지 및 주변 환경 변화 감지 알고리즘을 이용한 스마트 휠체어 (2023.02-2023.05) -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.02-2023.05</span>
+										<div class="d-flex">
+											<h2>얼굴 움직임 감지 및 주변 환경 변화 감지 알고리즘을 이용한 스마트 휠체어</h2>
+											<div>&nbsp;<a class="btn btn-outline-secondary" target="_blank"
+													href="https://github.com/yeonggwangchoi/Face_Control_Wheelchair">Github</a>
+											</div>
+										</div>
+										<span class="position">S/W 및 H/W개발</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python, C, Java</div>
+											<div> - <b>Libraries:</b> OpenCV, Dlib, Ultralytics (YOLOv8)</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - Dlib 기반 얼굴 특징점 검출 및 방향 예측 조향 제어</div>
+											<div> - YOLOv8 기반 이동 경로 상 장애물 감지</div>
+											<div> - Object Detection + Classification 기반 신호등 인식</div>
+											<div> - Android 앱 기반 보호자 원격 제어 시스템</div>
+										</div>
+									</div>
 								</div>
-								<div> <b class="text-dark">기술 스택 : </b>C, 앱 인벤터
+
+								<!-- 더보기 버튼 -->
+								<div class="text-center mt-4 mb-4">
+									<button class="btn btn-outline-primary btn-more-projects" type="button" data-toggle="collapse" data-target="#more-undergrad-projects" aria-expanded="false" aria-controls="more-undergrad-projects">
+										더보기 <i class="icon-arrow-down"></i>
+									</button>
 								</div>
-								<div> <b class="text-dark">주요 기능 : </b>
-										<div> - 포토 센서의 특성을 활용하여 라인을 검출하고 따라가는 라인트레이서</div>
-										<div> - 앱 인벤터로 RC_Car조종 어플 구현</div>
-										<div> - 충돌 방지를 위해 초음파 센서를 통해 충돌 전 정지하도록 구현</div>
+
+								<!-- 숨겨진 나머지 프로젝트들 -->
+								<div class="collapse" id="more-undergrad-projects">
+
+								<!-- Side Project - Portfolio 사이트 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.07-현재~</span>
+										<div class="d-flex">
+											<h2>Side Project - Portfolio 사이트</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> HTML, CSS, JavaScript</div>
+											<div> - <b>Frameworks:</b> Bootstrap</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - Bootstrap 기반 반응형 포트폴리오 웹사이트 구축</div>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
+
+								<!-- OpenCV를 활용한 C++기반 차선 검출 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.06-2023.06</span>
+										<div class="d-flex">
+											<h2>OpenCV를 활용한 C++기반 차선 검출</h2>
+										</div>
+										<span class="position">S/W개발</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>OS:</b> Linux</div>
+											<div> - <b>Languages:</b> C++</div>
+											<div> - <b>Frameworks:</b> ROS</div>
+											<div> - <b>Libraries:</b> OpenCV</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - Hough Transform 기반 차선 직선 검출</div>
+											<div> - 좌/우 차선 분류 및 대표 직선 추출</div>
+											<div> - 차선 중심 기반 조향 값 계산</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Linux 환경에서 C를 활용한 게임 프로그램 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.05-2023.05</span>
+										<div class="d-flex">
+											<h2>Linux 환경에서 C를 활용한 게임 프로그램</h2>
+										</div>
+										<span class="position">S/W개발</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>OS:</b> Linux (Ubuntu)</div>
+											<div> - <b>Languages:</b> C</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - Linux fork/exec 기반 멀티 프로세스 게임 런처</div>
+											<div> - 프로세스 간 동적 제어 시스템</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- U-Net을 활용한 CT 이미지 Segmentation -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.05-2023.05</span>
+										<div class="d-flex">
+											<h2>U-Net을 활용한 CT 이미지 Segmentation</h2>
+										</div>
+										<span class="position">팀장</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python</div>
+											<div> - <b>Libraries:</b> PyTorch</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - PyTorch 기반 U-Net 모델 구현</div>
+											<div> - CT 이미지 심장/기도 영역 Segmentation</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- VGG Net을 활용한 정상, 폐렴, 코로나 환자 폐 X-ray 사진 분류 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.04-2023.04</span>
+										<div class="d-flex">
+											<h2>VGG Net을 활용한 정상, 폐렴, 코로나 환자 폐 X-ray 사진 분류</h2>
+										</div>
+										<span class="position">S/W개발</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python</div>
+											<div> - <b>Libraries:</b> PyTorch</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - VGGNet 기반 폐 X-ray 이미지 분류 (정상/폐렴/코로나)</div>
+											<div> - 데이터 증강을 통한 모델 성능 비교 분석</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 유아용 전동차 자율주행 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.12-2023.02</span>
+										<div class="d-flex">
+											<h2>유아용 전동차 자율주행</h2>
+										</div>
+										<span class="position">팀장</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python, C, C++</div>
+											<div> - <b>Libraries:</b> OpenCV, Ultralytics (YOLOv5)</div>
+											<div> - <b>Hardware:</b> Arduino Mega, LiDAR</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - Arduino Mega-PC 시리얼 통신 기반 차량 제어</div>
+											<div> - OpenCV 기반 차선 인식 및 자율주행</div>
+											<div> - LiDAR/초음파 센서 기반 장애물 감지 및 회피</div>
+											<div> - YOLOv5 기반 신호등 인식 및 자동 주차</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- CNN 기반 얼굴 특징점 검출 및 신호등 색상 분류 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2023.11-2023.01</span>
+										<div class="d-flex">
+											<h2>CNN 기반 얼굴 특징점 검출 및 신호등 색상 분류</h2>
+										</div>
+										<span class="position">S/W개발</span>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python</div>
+											<div> - <b>Libraries:</b> PyTorch, Dlib</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - 경량 CNN 기반 얼굴 특징점 검출 모델 구현</div>
+											<div> - CNN 기반 신호등 색상 분류 모델 학습</div>
+										</div>
+									</div>
+								</div>
+
+
+								<!-- MFC를 활용한 열쇠 렌탈 시스템 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.12-2022.12</span>
+										<div class="d-flex">
+											<h2>MFC를 활용한 열쇠 렌탈 시스템</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> C, C++</div>
+											<div> - <b>Frameworks:</b> MFC</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - MFC 기반 열쇠 대여/반납/조회 GUI 시스템</div>
+											<div> - 렌탈 이력 데이터베이스 관리</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- OpenCV를 이용한 안구 혈관 검출 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.12-2022.12</span>
+										<div class="d-flex">
+											<h2>OpenCV를 이용한 안구 혈관 검출</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python</div>
+											<div> - <b>Libraries:</b> OpenCV</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - Grayscale 변환 및 필터 기반 이미지 전처리</div>
+											<div> - 형태학적 연산 기반 안구 혈관 검출</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Yolov5를 활용한 주차공간 인식 시스템 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.11-2022.11</span>
+										<div class="d-flex">
+											<h2>Yolov5를 활용한 주차공간 인식 시스템</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python</div>
+											<div> - <b>Libraries:</b> Ultralytics (YOLOv5)</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - YOLOv5 기반 주차 공간 객체 탐지 모델 학습</div>
+											<div> - 실시간 빈 주차 공간 인식</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- OpenCV를 이용한 차량 번호판 영역 검출 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.10-2022.10</span>
+										<div class="d-flex">
+											<h2>OpenCV를 이용한 차량 번호판 영역 검출</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python</div>
+											<div> - <b>Libraries:</b> OpenCV</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - 이미지 전처리 및 색상 특징 기반 번호판 영역 검출</div>
+											<div> - 형태학적 연산 기반 노이즈 제거</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- ATmega128(MCU)을 활용한 축소형 AED -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.09-2022.09</span>
+										<div class="d-flex">
+											<h2>ATmega128(MCU)을 활용한 축소형 AED</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> C</div>
+											<div> - <b>Hardware:</b> ATmega128</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - Timer/Counter 기반 CPR 타이밍 안내 시스템</div>
+											<div> - LCD 기반 사용자 인터페이스 및 안전 기능</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- ROS기반 자율주행 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.09-2023.09</span>
+										<div class="d-flex">
+											<h2>ROS기반 자율주행</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> Python</div>
+											<div> - <b>Frameworks:</b> ROS</div>
+											<div> - <b>Libraries:</b> OpenCV</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - 초음파 센서 기반 장애물 인식 미로 주행</div>
+											<div> - OpenCV 기반 차선 인식 자율주행</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 모형 전기차 제작 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.08-2023.08</span>
+										<div class="d-flex">
+											<h2>모형 전기차 제작</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> C, C++, Java</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - 3D 프린팅 기반 차체 설계 및 제작</div>
+											<div> - ADC 기반 무선 조향/구동 제어 시스템</div>
+											<div> - DC-DC 컨버터 기반 전원 공급 회로 설계</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- ATmega128(MCU)을 활용한 화장실 전등 유지 시스템 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.07-2023.07</span>
+										<div class="d-flex">
+											<h2>ATmega128(MCU)을 활용한 화장실 전등 유지 시스템</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> C</div>
+											<div> - <b>Hardware:</b> ATmega128</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - 스위치/압력 센서 기반 전등 자동 유지 시스템</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- ATmega128(MCU)을 활용한 영단어 학습 도구 -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.06-2023.06</span>
+										<div class="d-flex">
+											<h2>ATmega128(MCU)을 활용한 영단어 학습 도구</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> C</div>
+											<div> - <b>Hardware:</b> ATmega128</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - LCD/스위치 기반 영단어 학습 인터페이스</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 라인트레이서 및 RC_Car -->
+								<div class="resume-wrap d-flex ftco-animate">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="flaticon-ideas"></span>
+									</div>
+									<div class="text pl-3">
+										<span class="date">2022.03-2023.05</span>
+										<div class="d-flex">
+											<h2>라인트레이서 및 RC_Car</h2>
+										</div>
+										<div> <b class="text-dark">기술 스택 : </b></div>
+										<div style="margin-left: 1rem; margin-bottom: 0.5rem;">
+											<div> - <b>Languages:</b> C</div>
+											<div> - <b>Frameworks:</b> App Inventor</div>
+										</div>
+										<div> <b class="text-dark">주요 기능 : </b>
+											<div> - 포토 센서 기반 라인 추종 주행</div>
+											<div> - App Inventor 기반 블루투스 원격 제어</div>
+											<div> - 초음파 센서 기반 충돌 방지</div>
+										</div>
+									</div>
+								</div>
+
+								</div><!-- collapse 끝 -->
 							</div><!-- 학부 과정 프로젝트 탭 끝 -->
 						</div><!-- 탭 콘텐츠 끝 -->
 
@@ -1249,7 +1411,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
 					<h2>함께 <span>성장할 기회</span>를 찾고 있습니다.</h2>
-					<p>컴퓨터비전과 딥러닝 분야에서 쌓아온 경험을 바탕으로 새로운 도전을 준비하고 있습니다.</p>
+					<p>AI와 자율주행 기술을 융합하여 미래 모빌리티를 현실로 구현하고자 합니다.</p>
 					<!-- <p class="mb-0"><a href="#contact-section" class="btn btn-primary py-3 px-5">연락주세요.</a></p> -->
 				</div>
 			</div>
